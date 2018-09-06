@@ -25,7 +25,8 @@ USAGE: getArtifacts.sh [-csv [filename]] [-r | -remoteHost [user@ip-address]] [-
 
 #check if root
 if [[ $EUID -ne 0 ]]; then
-   sudo su
+   echo "You need root privileges!"
+   exit 1
 fi
 
 # get arguments
